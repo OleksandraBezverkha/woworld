@@ -1,0 +1,40 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.navbar-default{background-color: #f1ffe7;
+
+}
+h1 {
+  font-size: 5vw;
+  font-family: arial,helvetica;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.section {
+  text-align:center;
+}
+
+#section1,
+#section2,
+#section3{
+  background-size: cover;
+}
+
+#section1 {
+  //background-image: image-url("bg2.jpg");
+  background-color: #c51e41;
+}
+
+#section2 {
+  background-image: image-url("bg3.jpg");
+}
+
+#section3 {
+  background-image: image-url("bg1.jpg");
+}
+
+#section4 {
+  background-image: image-url("bg4.jpg");
+}
