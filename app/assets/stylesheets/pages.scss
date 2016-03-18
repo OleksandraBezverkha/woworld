@@ -1,6 +1,10 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  margin-top: 50px;
+}
+p .alert .alert-success{margin-top: 10px;}
 .navbar-default{background-color: #f1ffe7;
 }
 .fullpage{color:white}

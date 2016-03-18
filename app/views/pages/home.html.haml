@@ -1,11 +1,15 @@
 .fullpage
+  - if notice
+    %p.alert.alert-success= notice
+  - if alert
+    %p.alert.alert-danger= alert
+  = yield
   #section1.section
-    -#- if notice
-    -#  %p.alert.alert-success= notice
-    -#- if alert
-    -#  %p.alert.alert-danger= alert
-    -#= yield
-    -#= link_to 'Home', root_path,class:"ololo"
+    - if notice
+      %p.alert.alert-success= notice
+    - if alert
+      %p.alert.alert-danger= alert
+    = yield
     .col-xs-2
     .col-xs-4
       %h1
