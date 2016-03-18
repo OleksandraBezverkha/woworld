@@ -23,7 +23,8 @@
               -#  .navbar-brand
               -#    Hello
               -#    = succeed "" do
-              -#      %strong= current_user.email
+              %strong
+                = current_user.email
               -#  -#-if current_user.image.small_thumb.blank? || !current_user.image.small_thumb.file.exists?
               -#  -#  = image_tag("default.png", size: "30x30", alt: "Avatar",class:"img-circle")
               -#  -#-else
@@ -31,6 +32,7 @@
               -#  -#.pull-right
               -#  -#  = link_to "edit profile", edit_user_registration_path, :class => 'navbar-link',class:"btn btn-default menu"
               -#  -#  =link_to "+add fraud",new_fraud_path, :class => 'navbar-link',class:"btn btn-default menu
+              = link_to "edit profile", edit_user_registration_path, :class => 'navbar-link',class:"btn btn-default menu"
               =link_to "logout", destroy_user_session_path, method: :delete, :class => 'navbar-link',class:"btn btn-default menu"
             .pull-right
               -#%button.btn.btn-default.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
