@@ -22,3 +22,10 @@
 en:
   hello: "Hello world!!!"
   language: "Language"
+  log_in: "Log In"
+  sign_up: "Sign Up"
+  current_password: "Текущий пароль"
+  email:
+  password: "Пароль"
+  password_confirmation: "Подтверждение пароля"
+  remember_me: "Запомнить меня"
