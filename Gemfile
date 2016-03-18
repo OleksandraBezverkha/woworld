@@ -6,6 +6,7 @@ gem 'bootstrap-sass'
 gem 'rails_layout'
 gem 'jquery-ui-rails'
 gem 'devise'
+gem 'i18n', '~> 0.7.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'

@@ -188,6 +188,7 @@ DEPENDENCIES
   devise
   haml
   haml-rails
+  i18n (~> 0.7.0)
   jbuilder (~> 2.0)
   jquery-rails
   jquery-ui-rails
