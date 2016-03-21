@@ -1,8 +1,9 @@
-= form_for(@upload, html: { multipart: true, class: "dropzone"}) do |f|
+= form_for(Upload.new, html: { multipart: true, class: "dropzone"}) do |f|
   .fallback
     = f.file_field :image
     %br/
     = f.submit "Upload"
 %br/
--@uploads.each do |upload|
-  =image_tag upload.image.url(:medium)
+-if @uploads
+  -@uploads.each do |upload|
+    =image_tag upload.image.url(:medium)

@@ -1,7 +1,7 @@
 class UploadsController < ApplicationController
   def new
     @upload = Upload.new
-    @uploads=Upload.all
+
   end
 
   def create
