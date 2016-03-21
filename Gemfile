@@ -9,6 +9,7 @@ gem 'devise'
 gem 'i18n', '~> 0.7.0'
 gem 'devise-i18n'
 gem 'omniauth-facebook'
+gem "paperclip", "~> 4.1"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
