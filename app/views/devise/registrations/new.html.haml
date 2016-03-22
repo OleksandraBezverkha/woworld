@@ -13,7 +13,6 @@
     = f.label :password_confirmation
     %br/
     = f.password_field :password_confirmation
-    = f.file_field :image
-    #avatar
   %div= f.submit t('.sign_up', :default => "Sign up")
+
 = render "devise/shared/links"

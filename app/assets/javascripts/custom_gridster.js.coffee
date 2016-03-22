@@ -11,4 +11,9 @@ $(document).ready ->
 ##    widget_base_dimensions: [340, 340]
 #    autogenerate_stylesheet: true
 #  });
+  $(".gridster li").click ->
+    $('.modal.image').modal()
+#    alert('addMore click event');
+
+
 
