@@ -15,4 +15,5 @@
 //= require jquery-ui
 //= require bootstrap-sprockets
 //= require dropzone.min
+//= require jquery.gridster.min.js
 //= require_tree .

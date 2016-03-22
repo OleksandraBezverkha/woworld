@@ -99,16 +99,35 @@
             = f.file_field :image
             %br/
             = f.submit "Upload"
-        %br/
-        -if @uploads
-          -@uploads.each do |upload|
-            =image_tag upload.image.url(:medium)
+        -#%br/
+        -#-if @uploads
+        -#  -@uploads.each do |upload|
+        -#    =image_tag upload.image.url(:medium)
 
 
     .col-xs-2
     -#=image_tag 'bg5.jpg'
   #section2.section
-    %h1 Title 2
+    -if @uploads
+      .gridster
+        %ul
+          -@uploads.each do |upload|
+            %li.gridster-cell{"data-col" => "1", "data-row" => "1", "data-sizex" => "1", "data-sizey" => "1"}
+              =image_tag upload.image.url(:medium)
+    -#.gridster
+    -#  %ul
+    -#    %li.gridster-cell{"data-col" => "1", "data-row" => "1", "data-sizex" => "1", "data-sizey" => "1"} Block1
+    -#    %li.gridster-cell{"data-col" => "1", "data-row" => "2", "data-sizex" => "1", "data-sizey" => "1"} Block2
+    -#    %li.gridster-cell{"data-col" => "1", "data-row" => "3", "data-sizex" => "1", "data-sizey" => "1"} Block3
+    -#    %li.gridster-cell{"data-col" => "2", "data-row" => "1", "data-sizex" => "2", "data-sizey" => "1"} Block4
+    -#    %li.gridster-cell{"data-col" => "2", "data-row" => "2", "data-sizex" => "2", "data-sizey" => "2"} Block5
+    -#    %li.gridster-cell{"data-col" => "4", "data-row" => "1", "data-sizex" => "1", "data-sizey" => "1"} Block6
+    -#    %li.gridster-cell{"data-col" => "4", "data-row" => "2", "data-sizex" => "2", "data-sizey" => "1"} Block7
+    -#    %li.gridster-cell{"data-col" => "4", "data-row" => "3", "data-sizex" => "1", "data-sizey" => "1"} Block8
+    -#    %li.gridster-cell{"data-col" => "5", "data-row" => "1", "data-sizex" => "1", "data-sizey" => "1"} Block9
+    -#    %li.gridster-cell{"data-col" => "5", "data-row" => "3", "data-sizex" => "1", "data-sizey" => "1"} Block10
+    -#    %li.gridster-cell{"data-col" => "6", "data-row" => "1", "data-sizex" => "1", "data-sizey" => "1"} Block11
+    -#    %li.gridster-cell{"data-col" => "6", "data-row" => "2", "data-sizex" => "1", "data-sizey" => "2"} Block12
   #section3.section
     %h1 Title 3
   #section4.section
