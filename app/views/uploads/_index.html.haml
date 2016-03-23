@@ -1,6 +1,6 @@
 -if @uploads
   .gridster
-    %ul
+    %ul#show_imgs
       -@uploads.each do |upload|
         %li.gridster-cell{"data-col" => "1", "data-row" => "1", "data-sizex" => "1", "data-sizey" => "1"}
-          =image_tag upload.image.url(:medium)
+          =image_tag upload.image_url(:thumb)

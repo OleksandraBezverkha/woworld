@@ -1,5 +1,5 @@
-= form_for(Upload.new, remote: true,html: { multipart: true, class: "dropzone"}) do |f|
+= form_for(Upload.new, remote: true,html: {  class: "dropzone", id: 'media-dropzone'}) do |f|
   .fallback
-    = f.file_field :image
+    = f.file_field :image , :multiple => true
     %br/
     = f.submit "Upload"

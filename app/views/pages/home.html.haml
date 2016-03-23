@@ -104,9 +104,10 @@
     .col-xs-2
     -#=image_tag 'bg5.jpg'
   #section2.section
-    = render 'uploads/new'
+    .dz
+      = render 'uploads/new'
     = render 'uploads/index'
-    = render 'uploads/modal'
+    -#= render 'uploads/modal'
   #section3.section
     %iframe{:allowfullscreen => "", :frameborder => "0", :height => "720", :src => "https://www.youtube.com/embed/oh_1c4NFnk4", :width => "1280"}
 
