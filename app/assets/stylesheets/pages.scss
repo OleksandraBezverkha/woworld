@@ -1,7 +1,6 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 .gridster-cell {
   //background-color: #2EFEF7;
   list-style-type: none;
@@ -10,13 +9,13 @@
 margin-top: 30px;}
 .dz{margin-top: 30px;}
 .dz-message{color: orangered}
-body {
-  margin-top: 50px;
-}
-p .alert .alert-success{margin-top: 10px;}
-.navbar-default{background-color: #f1ffe7;
-}
-.fullpage{color:white}
+//body {
+//  margin-top: 50px;
+//}
+//p .alert .alert-success{margin-top: 10px;}
+//.navbar-default{background-color: #f1ffe7;
+//}
+//.fullpage{color:white;background-color: #122b40}
 input[type="email"],input[type="password"],input[type="submit"],textarea{padding: 6px;
   margin:10px 0px;width:400px;color: #000000;
   padding-right: 40px;}
@@ -24,6 +23,7 @@ input[type="email"],input[type="password"],input[type="submit"],textarea{padding
 .mytab{background-color: rgba(255,255,255,0.2);
   padding:20px;
   height: 350px;
+  width:450px;
 }
 h1 {
   font-size: 5vw;
@@ -32,30 +32,132 @@ h1 {
   margin: 0;
   padding: 0;
 }
+h2,p{color: white;}
+///////ScrollMagic
+/* Ignore => Base Styles */
+main { background: #c52342; -webkit-font-smoothing: antialiased; }
+.ScrollSceneIndicators { z-index: 9999999 !important; }
 
-.section {
-  text-align:center;
+/* Ignore => Useless Header Styles */
+header {
+  text-align: center;
+  background: rgb(255, 145, 0);
+  //padding: 10px 0 ;
+  color: #fff;
+  position: relative;
+}
+.lead,h1,h2,hr{width:40%}
+header * { text-shadow: 0px 1px 1px rgba(150, 150, 150, 0.35); }
+header h1 { margin-top: 0; font-size: 50px;  }
+header h1 i.fa-heart { color: rgb(248, 85, 90); }
+header h1 i.fa-magic { color: rgb(39, 97, 223); }
+header hr { max-width: 80px; border-top: solid 2px #fff; }
+header h2 { margin-bottom: 30px; }
+header p { margin-bottom: 0px; }
+header i.fa-angle-double-down {
+  font-size: 50px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  color: rgba(255, 251, 251, 0);
+}
+header i.fa-angle-double-down:after {
+  content: 'Start Scrolling Down';
+  position: absolute;
+  bottom: 100%;
+  left: -35px;
+  font-size: 15px;
+  width: 104px;
 }
 
-#section1,
-#section2,
-#section3{
-  background-size: cover;
+/* Create huge scrolling area (imitates height of a page) */
+//main { padding: 100px 0 2000px 0; overflow: hidden; }
+
+/* Styles for wrap for demo */
+.wrap {
+  text-align: center;
+  background: #fff;
+  //padding: 50px 0;
+  -moz-box-shadow: 0 0 6px rgba(153, 153, 153, 0.25);
+  -webkit-box-shadow: 0 0 6px rgba(153, 153, 153, 0.25);
+  box-shadow: 0 0 6px rgba(153, 153, 153, 0.25);
+  position: relative;
+  margin-bottom: 50px;
+  overflow: hidden;
 }
 
-#section1 {
-  //background-image: image-url("bg2.jpg");
-  background-color: #c51e41;
+/* Default Animation Styles */
+.animation {
+  background: transparent;
+  width: 100px;
+  height: 10px;
+  //border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto!important;
+  position: relative;
+}
+.animation i {
+  color: #fff;
+  position: absolute;
+  //left: 50%;
+  //top: 50%;
+  font-size: 30px;
+  -webkit-transform: translate(-70%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
-#section2 {
-  background-image: image-url("bg3.jpg");
-}
 
-#section3 {
-  background-image: image-url("bg1.jpg");
-}
 
-#section4 {
-  background-image: image-url("bg4.jpg");
+/* SCENE COLORS */
+main {
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+main.scene-1-active { background: rgb(255, 231, 6) !important; }
+main.scene-2-active { background: rgb(164, 32, 214) !important; }
+main.scene-3-active { background: rgb(2, 0, 60) !important; }
+.wrap{width: 85%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto!important;
+  margin-bottom: 100px;
+}
+.mytab{position:absolute;right:10%; }
+.start_page{width:100%;height:1000px;margin-bottom: 100px;margin-top: 100px;}
+a:link {
+  color: white;
+}
+a:visited {
+  color: white;
+}
+/////////////////////////////////buttonan
+
+
+button.rotate {
+  width: 50px;
+  height: 50px;
+  color: #ffffff;
+  background-color: #db3750;
+  font-size: 1.8em;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+  bottom: 30px;
+  position: absolute;
+  //right:auto;
+  left: 50%;
+}
+/*magic starts here*/
+
+button.rotate:hover {
+  cursor: pointer;
 }

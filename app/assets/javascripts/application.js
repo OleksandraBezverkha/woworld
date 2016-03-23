@@ -16,4 +16,6 @@
 //= require bootstrap-sprockets
 //= require dropzone.min
 //= require jquery.gridster.min.js
+//= require greensock/TweenMax.min
+//= require jquery.scrollmagic
 //= require_tree .
