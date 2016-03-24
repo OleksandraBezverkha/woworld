@@ -24,20 +24,20 @@
       (#{t('.we_need_your_current_password_to_confirm_your_changes', :default => 'we need your current password to confirm your changes')})
     %br/
     = f.password_field :current_password
-    %strong
-      =t(:avatar)
-    %br
-    .avatarka
-      =t(:select_file)
-      = f.file_field :avatar#,size:"1",style:"margin-top: -50px; margin-left:-410px; -moz-opacity: 0; filter: alpha(opacity=0); opacity: 0; font-size: 150px; height: 100px;"
-    %br
-    -#-if current_user.avatar.thumb.blank? || !current_user.avatar.thumb.file.exists?
-    -#  = image_tag("default.jpg", size: "300x300", alt: "Avatar",class:"img-circle")
-    -#-else
-    = image_tag(current_user.image.thumb,class:"img-circle")
-    %br
-      =t(:remove_avatar)
-      = f.check_box :remove_image
+    -#%strong
+    -#  =t(:avatar)
+    -#%br
+    -#.avatarka
+    -#  =t(:select_file)
+    -#  = f.file_field :avatar#,size:"1",style:"margin-top: -50px; margin-left:-410px; -moz-opacity: 0; filter: alpha(opacity=0); opacity: 0; font-size: 150px; height: 100px;"
+    -#%br
+    -#-#-if current_user.avatar.thumb.blank? || !current_user.avatar.thumb.file.exists?
+    -#-#  = image_tag("default.jpg", size: "300x300", alt: "Avatar",class:"img-circle")
+    -#-#-else
+    -#-#= image_tag(current_user.image.thumb,class:"img-circle")
+    -#%br
+    -#  =t(:remove_avatar)
+    -#  = f.check_box :remove_image
   %div= f.submit t('.update', :default => "Update")
 %h3= t('.cancel_my_account', :default => 'Cancel my account')
 %p

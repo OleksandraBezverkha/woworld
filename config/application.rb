@@ -24,5 +24,6 @@ module Woworld
     config.active_record.raise_in_transactional_callbacks = true
     # I18n.load_path += Dir[Rails.root.join('lib', 'locale', '*.{rb,yml}')]
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+    config.assets.precompile += %w( .svg .eot .woff .ttf .png .jpg .gif)
   end
 end
