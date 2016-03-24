@@ -9,13 +9,11 @@ $(document).ready(function(){
         // changed the passed param to one accepted by
         // our rails app
         paramName: "upload[image]",
-        // show remove links on each image upload
+        // show remove links on each image uploa
         addRemoveLinks: true,
         //clickable:true
     });
 });
-
-
 //Dropzone.autoDiscover = false;
 //
 //if($('#media-dropzone')){

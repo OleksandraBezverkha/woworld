@@ -18,4 +18,6 @@
 //= require jquery.gridster.min.js
 //= require greensock/TweenMax.min
 //= require jquery.scrollmagic
+//= require tinymce
+//= require tinymce-jquery
 //= require_tree .

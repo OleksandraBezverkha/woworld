@@ -7,15 +7,16 @@ class UploadsController < ApplicationController
   def create
     @upload = Upload.create(image: params[:file])
     puts @upload.inspect
-    if @upload.save
-      respond_to do |format|
-        format.json{ render :json => @upload }
-        end
-    else
-      #  you need to send an error header, otherwise Dropzone
-      #  will not interpret the response as an error:
-      render json: { error: @upload.errors.full_messages.join(',')}, :status => 400
-    end
+    # if @upload.save
+    #   respond_to do |format|
+    #     format.json{ render :json => @upload }
+    #     end
+    #   end
+    # else
+    #   #  you need to send an error header, otherwise Dropzone
+    #   #  will not interpret the response as an error:
+    #   render json: { error: @upload.errors.full_messages.join(',')}, :status => 400
+    # end
   end
 
   private

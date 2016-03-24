@@ -34,7 +34,7 @@ $(function() {
 
     // Create Animation for 0.5s
     var tween3 = TweenMax.to('#animation-3', 0.3, {
-        backgroundColor: 'rgb(17, 0, 98)',
+        backgroundColor: 'rgb(66, 253, 219)',
         scale: 10,
         rotation: 180
     });
@@ -46,7 +46,9 @@ $(function() {
         .setClassToggle('main', 'scene-3-active')
         .setTween(tween3)
         .addTo(scrollMagicController);
-    var tween3 = TweenMax.to('.rotate', 0.7, {
+
+
+    var tween4 = TweenMax.to('.rotate', 0.7, {
         scale: 1,
         rotation: 90
     });
@@ -56,9 +58,23 @@ $(function() {
         //offset: 200
     })
         //.setClassToggle('main', 'scene-3-active')
-        .setTween(tween3)
+        .setTween(tween4)
         .addTo(scrollMagicController);
 
+    // Create Animation for 0.5s
+    var tween5 = TweenMax.to('#animation-5', 0.3, {
+        backgroundColor: 'rgb(255, 61, 79)',
+        scale: 10,
+        rotation: 180
+    });
+
+    var scene5 = new ScrollScene({
+        triggerElement: '#scene-5',
+        offset: 50
+    })
+        .setClassToggle('main', 'scene-5-active')
+        .setTween(tween5)
+        .addTo(scrollMagicController);
 
 
 
@@ -68,5 +84,6 @@ $(function() {
     scene2.addIndicators();
     scene3.addIndicators();
     scene4.addIndicators();
+    scene5.addIndicators();
 
 });

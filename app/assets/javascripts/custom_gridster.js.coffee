@@ -4,7 +4,7 @@ $(document).ready ->
     widget_base_dimensions: [300, 300],
     widget_selector: "li",
     autogenerate_stylesheet: true,
-    max_cols: 5,
+    max_cols: 3,
   });
 #  $(".gridster li").gridster({
 ##    widget_margins: [10, 10],

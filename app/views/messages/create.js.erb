@@ -1,0 +1,4 @@
+$('#msg').html('<%= escape_javascript(render('messages/message', :messages => @messages)) %>');
+tinyMCE.activeEditor.setContent('');
+//$('#comment_content').val('')
+//$("#error_com").html("#{@error_comment}");
