@@ -122,24 +122,24 @@ main {
   -moz-transition: all 300ms ease;
   transition: all 300ms ease;
 }
-main.scene-1-active { background: rgb(255, 231, 6) !important; }
+//main.scene-1-active { background: rgb(255, 231, 6) !important; }
 main.scene-2-active { background: rgb(164, 32, 214) !important; }
-main.scene-3-active { background: rgb(4, 232, 183) !important; }
-main.scene-5-active { background: rgb(237, 27, 47) !important; }
+main.scene-3-active { background: rgb(237, 27, 47) !important; }
+main.scene-5-active { background: rgb(4, 232, 183) !important; }
 .wrap{width: 100%;
   height: auto;
   margin-left: auto;
   margin-right: auto!important;
   margin-bottom: 30%;
 }
-.wrap p,.wrap h1,.wrap h2{color: #a6202f;}
-//.mytab{position:absolute;right:10%; }
+.wrap p,.wrap h1,.wrap h2{color: #160505;}
+.mytab{position:absolute;right:10%; }
 .start_page{width:100%;height:1000px;margin-bottom: 100px;margin-top: 100px;}
 a:link {
-  color: #a6202f;
+  color: white;
 }
 a:visited {
-  color: #a6202f;
+  color: white;
 }
 /////////////////////////////////buttonan
 
@@ -162,11 +162,14 @@ button.rotate {
 button.rotate:hover {
   cursor: pointer;
 }
-.img-circle{position: absolute;top:25%;right:20%;}
+.me{position:static;top:0%;left:0%;}
 #msg{height:200px;overflow: auto;
 }
-.msg{border: 2px outset #ff4d54;margin-left: 10px;
+.msg:nth-child(even){background-color: rgba(54, 174, 250, 0.31)
 }
-.all_emoji{background-color: #eaebec;
-  border: 2px solid #a39aff;
+.msg{padding: 10px;
 }
+.all_emoji{background-color: #eaebec;;
+}
+.start_page{margin-bottom: 50%;}
+#send{position: absolute;right:0;bottom:221px;}

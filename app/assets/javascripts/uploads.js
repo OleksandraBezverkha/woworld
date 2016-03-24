@@ -29,21 +29,21 @@ $(document).ready(function(){
 //            },5000);
 //        });
 //    });
-//    var appendContent = function(imageUrl, mediaId) {
-//        var col = 1, row = 1;
-//        if($("#show_imgs li").length > 0) {
-//            col = parseInt($("#show_imgs li").last().attr('data-col'));
-//            row = parseInt($("#show_imgs li").last().attr('data-row'));
-//
-//            if (col >= 5) {
-//                row += 1;
-//                col = 1;
-//            }
-//            else col += 1;
-//        }
-//        code =' <li class="gridster-cell gs-w" data-col="'+col+'" data-row="'+row+'" data-sizex="1" data-sizey="1" position="relative">' +
-//            '<img src="'+imageUrl+'" />' + '</li>';
-//        $("#show_imgs").append(code);
-//        $($("#show_imgs li")).css({"mapgin": "50px","background-color": "yellow"});
-//    };
+    //var appendContent = function(imageUrl, mediaId) {
+    //    var col = 1, row = 1;
+    //    if($("#show_imgs li").length > 0) {
+    //        col = parseInt($("#show_imgs li").last().attr('data-col'));
+    //        row = parseInt($("#show_imgs li").last().attr('data-row'));
+    //
+    //        if (col >= 5) {
+    //            row += 1;
+    //            col = 1;
+    //        }
+    //        else col += 1;
+    //    }
+    //    code =' <li class="gridster-cell gs-w" data-col="'+col+'" data-row="'+row+'" data-sizex="1" data-sizey="1" position="relative">' +
+    //        '<img src="'+imageUrl+'" />' + '</li>';
+    //    $("#show_imgs").append(code);
+    //    $($("#show_imgs li")).css({"mapgin": "50px","background-color": "yellow"});
+    //};
 //}

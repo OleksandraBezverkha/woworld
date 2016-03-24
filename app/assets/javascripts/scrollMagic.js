@@ -2,18 +2,18 @@ $(function() {
 
     var scrollMagicController = new ScrollMagic();
 
-    var tween1 = TweenMax.to('#animation-1', 0.3, {
-        backgroundColor: 'rgb(255, 253, 61)',
-        scale: 10,
-        rotation: 180
-    });
-    var scene1 = new ScrollScene({
-        triggerElement: '#scene-1',
-        offset: 50
-    })
-        .setClassToggle('main', 'scene-1-active')
-        .setTween(tween1)
-        .addTo(scrollMagicController);
+    //var tween1 = TweenMax.to('#animation-1', 0.3, {
+    //    backgroundColor: 'rgb(255, 253, 61)',
+    //    scale: 10,
+    //    rotation: 180
+    //});
+    //var scene1 = new ScrollScene({
+    //    triggerElement: '#scene-1',
+    //    offset: 50
+    //})
+    //    .setClassToggle('main', 'scene-1-active')
+    //    .setTween(tween1)
+    //    .addTo(scrollMagicController);
 
     // Create Animation for 0.5s
     var tween2 = TweenMax.to('#animation-2', 0.3, {
@@ -34,7 +34,7 @@ $(function() {
 
     // Create Animation for 0.5s
     var tween3 = TweenMax.to('#animation-3', 0.3, {
-        backgroundColor: 'rgb(66, 253, 219)',
+        backgroundColor: 'rgb(255, 61, 79)',
         scale: 10,
         rotation: 180
     });
@@ -60,10 +60,9 @@ $(function() {
         //.setClassToggle('main', 'scene-3-active')
         .setTween(tween4)
         .addTo(scrollMagicController);
-
     // Create Animation for 0.5s
     var tween5 = TweenMax.to('#animation-5', 0.3, {
-        backgroundColor: 'rgb(255, 61, 79)',
+        backgroundColor: 'rgb(66, 253, 219)',
         scale: 10,
         rotation: 180
     });
@@ -80,7 +79,7 @@ $(function() {
 
 
     // Add debug indicators fixed on right side
-    scene1.addIndicators();
+    //scene1.addIndicators();
     scene2.addIndicators();
     scene3.addIndicators();
     scene4.addIndicators();
