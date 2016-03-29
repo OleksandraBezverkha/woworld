@@ -1,0 +1,51 @@
+=link_to "logout", destroy_user_session_path, method: :delete,class:"btn btn-danger menu"
+%br
+  %br
+.tab2
+  %ul.nav.nav-tabs
+    %li.active
+      %a{"data-toggle" => "tab", :href => "#info"}
+        =t(:info)
+    %li
+      %a{"data-toggle" => "tab", :href => "#edit"}
+        =t(:edit)
+  .tab-content
+    .tab-pane.active#info
+      %br
+      %p
+        Name
+      %h3
+        %strong
+          = current_user.name
+      %br
+      %p Email
+      %h3
+        %strong
+          = current_user.email
+    .tab-pane#edit
+      = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
+        -#= devise_error_messages!
+        %div
+          %br/
+          = f.text_field :name,value: "#{current_user.name}",placeholder: "Name"
+          %br/
+          = f.email_field :email,value: "#{current_user.email}",placeholder: "Email"
+        -#- if devise_mapping.confirmable? && resource.pending_reconfirmation?
+        -#  %p
+        -#    = t('.currently_waiting_confirmation_for_email', :email => resource.unconfirmed_email, :default => "Currently waiting confirmation for: %{email}")
+        -#%div
+          -#= f.label :password
+        %p
+          (#{t('.leave_blank_if_you_don_t_want_to_change_it', :default => "leave blank if you don't want to change it")})
+          = f.password_field :password, :autocomplete => "off",placeholder: "Password"
+          %br/
+          = f.password_field :password_confirmation,placeholder: "Password Confirmation"
+        -#%div
+        -#  -#= f.label :current_password
+        -#  %p
+        -#    (#{t('.we_need_your_current_password_to_confirm_your_changes', :default => 'we need your current password to confirm your changes')})
+        -#  = f.password_field :current_password,placeholder: "Current Password"
+        %div= f.submit t('.update', :default => "Update")
+      %p
+        = t('.unhappy', :default => 'Unhappy')
+        ? #{link_to t('.cancel_my_account', :default => "Cancel my account"), registration_path(resource_name), :data => { :confirm => t('.are_you_sure', :default => "Are you sure?") }, :method => :delete}.
