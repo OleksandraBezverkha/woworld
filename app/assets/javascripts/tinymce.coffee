@@ -4,4 +4,3 @@ $(document).ready ->
 #    console.log(txt)
 #    $('.msg').prepend('<p>'+txt+'</p>')
 #    tinyMCE.activeEditor.setContent('');
-  window.scrollTo(0,0);

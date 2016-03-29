@@ -1,13 +1,64 @@
 .container
   = tinymce_assets
   .start_page
-    = link_to 'WoWorld', root_path, class: 'navbar-brand'
-    - if user_signed_in?
-      %strong
-        %h2
-          = current_user.email
-      = link_to "edit profile", edit_user_registration_path,class:"btn btn-danger menu"
-      =link_to "logout", destroy_user_session_path, method: :delete,class:"btn btn-danger menu"
+    -if user_signed_in?
+      -#.pull-left
+      -#%strong
+      -#  %h2
+      -#    = current_user.email
+      .pull-right
+        =link_to "logout", destroy_user_session_path, method: :delete,class:"btn btn-danger menu"
+        %br
+          %br
+        .tab2
+          %ul.nav.nav-tabs
+            %li.active
+              %a{"data-toggle" => "tab", :href => "#info"}
+                =t(:info)
+            %li
+              %a{"data-toggle" => "tab", :href => "#edit"}
+                =t(:edit)
+          .tab-content
+            .tab-pane.active#info
+              %br
+              %p
+                Name
+              %h3
+                %strong
+                  = current_user.name
+              %br
+              %p Email
+              %h3
+                %strong
+                  = current_user.email
+            .tab-pane#edit
+              %h2= t('.title', :resource => resource_class.model_name.human , :default => "Edit #{resource_name.to_s.humanize}")
+              = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
+                -#= devise_error_messages!
+                %div
+                  %br/
+                  = f.text_field :name,value: "#{current_user.name}",placeholder: "Name"
+                  %br/
+                  = f.email_field :email,value: "#{current_user.email}",placeholder: "Email"
+                -#- if devise_mapping.confirmable? && resource.pending_reconfirmation?
+                -#  %p
+                -#    = t('.currently_waiting_confirmation_for_email', :email => resource.unconfirmed_email, :default => "Currently waiting confirmation for: %{email}")
+                -#%div
+                  -#= f.label :password
+                %p
+                  (#{t('.leave_blank_if_you_don_t_want_to_change_it', :default => "leave blank if you don't want to change it")})
+                  = f.password_field :password, :autocomplete => "off",placeholder: "Password"
+                  %br/
+                  = f.password_field :password_confirmation,placeholder: "Password Confirmation"
+                -#%div
+                -#  -#= f.label :current_password
+                -#  %p
+                -#    (#{t('.we_need_your_current_password_to_confirm_your_changes', :default => 'we need your current password to confirm your changes')})
+                -#  = f.password_field :current_password,placeholder: "Current Password"
+                %div= f.submit t('.update', :default => "Update")
+              %p
+                = t('.unhappy', :default => 'Unhappy')
+                ? #{link_to t('.cancel_my_account', :default => "Cancel my account"), registration_path(resource_name), :data => { :confirm => t('.are_you_sure', :default => "Are you sure?") }, :method => :delete}.
     .pull-right
       .btn-group
         %button.btn.btn-danger{:type => "button"}
@@ -20,44 +71,8 @@
             =link_to "English", locale: :en
           %li
             = link_to 'Русский', :locale=>'ru'
-
-      -#-if user_signed_in?
-      -#  -#.pull-right
-      -#  %h2= t('.title', :resource => resource_class.model_name.human , :default => "Edit #{resource_name.to_s.humanize}")
-      -#  = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
-      -#    = devise_error_messages!
-      -#    %div
-      -#      = f.label :email
-      -#      %br/
-      -#      = f.email_field :email
-      -#    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-      -#      %p
-      -#        = t('.currently_waiting_confirmation_for_email', :email => resource.unconfirmed_email, :default => "Currently waiting confirmation for: %{email}")
-      -#    %div
-      -#      = f.label :password
-      -#      %i
-      -#        (#{t('.leave_blank_if_you_don_t_want_to_change_it', :default => "leave blank if you don't want to change it")})
-      -#      %br/
-      -#      = f.password_field :password, :autocomplete => "off"
-      -#    %div
-      -#      = f.label :password_confirmation
-      -#      %br/
-      -#      = f.password_field :password_confirmation
-      -#    %div
-      -#      = f.label :current_password
-      -#      %i
-      -#        (#{t('.we_need_your_current_password_to_confirm_your_changes', :default => 'we need your current password to confirm your changes')})
-      -#      %br/
-      -#      = f.password_field :current_password
-      -#    %div= f.submit t('.update', :default => "Update")
-      -#  %h3= t('.cancel_my_account', :default => 'Cancel my account')
-      -#  %p
-      -#    = t('.unhappy', :default => 'Unhappy')
-      -#    ? #{link_to t('.cancel_my_account', :default => "Cancel my account"), registration_path(resource_name), :data => { :confirm => t('.are_you_sure', :default => "Are you sure?") }, :method => :delete}.
-      -#  = link_to t('devise.shared.links.back', :default => "Back"), :back
-
       - unless user_signed_in?
-        %h2 Devise Omniauth
+        %h3 Devise Omniauth
         .mytab
           %ul.nav.nav-tabs
             %li.active
@@ -90,13 +105,6 @@
                   = f.email_field :email, autofocus: true,placeholder:"#{t(:email)}"
                 .field
                   = f.password_field :password, autocomplete: "off",placeholder:"#{t(:password)}"
-
-                -#- if devise_mapping.rememberable?
-                -#  .field
-                -#    %br
-                -#    = f.check_box :remember_me
-                -#    = f.label :remember_me
-
                 .actions
                 = f.submit "#{t(:log_in)}"
                 %br
@@ -105,6 +113,8 @@
                 - resource_class.omniauth_providers.each do |provider|
                   = link_to t('.sign_in_with_provider', :provider => provider.to_s.titleize, :default => "Sign in with #{provider.to_s.titleize}"), omniauth_authorize_path(resource_name, provider)
     .pull-left
+    = link_to 'WoWorld', root_path, class: 'navbar-brand'
+    .pull-left
       -#%h1 My Portfolio
       -#%h2 Ololo
       = image_tag("bg5.jpg", size: "400x300", alt: "Avatar",class:"me")
@@ -112,10 +122,6 @@
       %br
       %p.lead
         =t(:desc)
-
-
-    -#%a{:href => "#animation-1"}
-    -#  %button.rotate >>
 %main
   .container
     -##animation-1.animation

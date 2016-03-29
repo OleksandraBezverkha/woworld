@@ -16,7 +16,7 @@ margin-top: 30px;}
 //.navbar-default{background-color: #f1ffe7;
 //}
 //.fullpage{color:white;background-color: #122b40}
-input[type="email"],input[type="password"],input[type="submit"],textarea{padding: 6px;
+input[type="email"],input[type="password"],input[type="submit"],input[type="text"],textarea{padding: 6px;
   margin:10px 0px;width:400px;color: #000000;
   padding-right: 40px;}
 //#user_remember_me{margin:0px!important;}
@@ -32,7 +32,7 @@ h1 {
   margin: 0;
   padding: 0;
 }
-h2,p{color: white;}
+h2,h3,p{color: white;}
 ///////ScrollMagic
 /* Ignore => Base Styles */
 main { background: #c52342; -webkit-font-smoothing: antialiased; }
@@ -174,3 +174,9 @@ button.rotate:hover {
 .start_page{margin-bottom: 50%;}
 #send{position: absolute;right:0;bottom:221px;}
 .menu{color:black;}
+.edit{position: absolute;right:15%;top: 20%;}
+.tab2{position:absolute;right:10%;background-color: rgba(255,255,255,0.2);
+  padding:20px;
+  height: 500px;
+  width:450px;
+}
