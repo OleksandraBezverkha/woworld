@@ -1,0 +1,4 @@
+$("#dev").html("<%= escape_javascript(render('pages/sign_up', resource: User.new)) %>");
+<% @error.each do |error| %>
+  $('#errors').append('<br /> <%= error %> ' );
+<% end %>

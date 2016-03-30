@@ -11,3 +11,12 @@
 /log/*
 !/log/.keep
 /tmp
+/.idea
+
+/public/uploads
+
+/.ruby-gemset
+/.ruby-version
+/.ruby-gemset~
+/.ruby-version~
+/config/database.yml
