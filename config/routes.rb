@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resources :messages
   # root 'uploads#new'
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks"}
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks",
+                                       registrations: 'users/registrations'}
   get 'pages/home'
   root  'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
