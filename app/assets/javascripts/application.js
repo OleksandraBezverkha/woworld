@@ -20,4 +20,6 @@
 //= require jquery.scrollmagic
 //= require tinymce
 //= require tinymce-jquery
+//= require jquery.jqpuzzle.full.js
+//= require jquery-migrate-1.3.0.js
 //= require_tree .

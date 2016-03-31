@@ -6,6 +6,7 @@ $(document).ready ->
     paramName: 'upload[image]'
     addRemoveLinks: true
 #//Dropzone.autoDiscover = false;
+
 #//
 #//if($('#media-dropzone')){
 #//    $(function() {
