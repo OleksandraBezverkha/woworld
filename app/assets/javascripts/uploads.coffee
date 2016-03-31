@@ -6,7 +6,7 @@ $(document).ready ->
     paramName: 'upload[image]'
     addRemoveLinks: true
 #//Dropzone.autoDiscover = false;
-
+#
 #//
 #//if($('#media-dropzone')){
 #//    $(function() {
@@ -39,3 +39,24 @@ $(document).ready ->
 #    //    $($("#show_imgs li")).css({"mapgin": "50px","background-color": "yellow"});
 #    //};
 #//}
+#    @showImage = (url) ->
+#        code = '<img src="' + url + '" />'
+#        $('.dropzone').html code
+#
+#    Dropzone.autoDiscover = false
+#    $(document).ready ->
+#        if $('.dropzone').length > 0
+#            $ ->
+#                mediaDropzone = undefined
+#                mediaDropzone = new Dropzone('.dropzone')
+#                mediaDropzone.on 'success', (image, responseText) ->
+#                    appendContent responseText.image.url, responseText.id
+#                    _this = this
+#                    setTimeout (->
+#                        _this.removeAllFiles()
+#                        return
+#                    ), 5000
+#                    return
+#
+#            appendContent = (imageUrl, mediaId) ->
+#                $('#media-contents').prepend '<div class="thumbnail" style="border: 1px solid red;" onClick="showImage(\'' + imageUrl + '\')">' + '<img src="' + imageUrl + '"/></div>'
