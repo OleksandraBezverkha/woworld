@@ -1,6 +1,6 @@
 .row
   .col-xs-8
-    = link_to 'WoWorld', root_path, class: 'navbar-brand'
+    = link_to 'WoWorld', root_path, class: 'navbar-brand',remote:true
     %br
       %br
     = image_tag("bg5.jpg", size: "400x300", alt: "Avatar",class:"me")
@@ -21,8 +21,4 @@
             =link_to "English", locale: :en
           %li
             = link_to 'Русский', :locale=>'ru'
-    #dev
-      -if user_signed_in?
-        =render "pages/edit", resource: resource
-      -else
-        =render "pages/sign_in_up", resource: resource
+      =render "pages/for_sign_in", resource: resource

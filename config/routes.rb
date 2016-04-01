@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # root 'uploads#new'
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks",
-                                       registrations: 'users/registrations'}
+                                       registrations: 'users/registrations',sessions: 'users/sessions',}
   get 'pages/home'
   root  'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.

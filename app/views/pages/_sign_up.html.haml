@@ -19,12 +19,12 @@
         .field
           - if @minimum_password_length
             %em
-              (#{@minimum_password_length} characters minimum)
+              (#{@minimum_password_length} #{t(:characters_minimum)})
           = f.password_field :password, autocomplete: "off",placeholder:"#{t(:password)}"
         .field
           = f.password_field :password_confirmation, autocomplete: "off",placeholder:"#{t(:password_confirmation)}"
         .actions
-          = f.submit "#{t(:sign_up)}"
+          = f.submit "#{t(:sign_up)}",class:"btn btn-success btn-sm"
     -#= render "users/shared/links"
     .tab-pane#log_in
       #errors
@@ -35,9 +35,9 @@
         .field
           = f.password_field :password, autocomplete: "off",placeholder:"#{t(:password)}"
         .actions
-        = f.submit "#{t(:log_in)}"
+        = f.submit "#{t(:log_in)}",class:"btn btn-success btn-sm"
         %br
       -#= render "devise/shared/links"
       - if devise_mapping.omniauthable?
         - resource_class.omniauth_providers.each do |provider|
-          = link_to t('.sign_in_with_provider', :provider => provider.to_s.titleize, :default => "Sign in with #{provider.to_s.titleize}"), omniauth_authorize_path(resource_name, provider)
+          = link_to "#{t(:Sign_in_with)} #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider),class:"btn btn-block btn-social btn-facebook"

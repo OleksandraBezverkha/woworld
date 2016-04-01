@@ -39,9 +39,10 @@
     #scene-3.wrap
       %h2 DROPZONE  drag img
       .dz
-      = render 'uploads/new'
-      = render 'uploads/index'
-      = render 'uploads/puzzle_modal'
+      -if user_signed_in?
+        = render 'uploads/new'
+        = render 'uploads/index'
+        -#= render 'uploads/puzzle_modal'
       -#%img.jqPuzzle{:alt => "Animals crossing", :src => "/assets/11.jpg"}
     #animation-5.animation
     #scene-5.wrap

@@ -1,3 +1,7 @@
-$("#dev").html("#{escape_javascript(render('pages/sign_up', resource: User.new))}");
+$("#dev").html("#{escape_javascript(render('pages/for_sign_up', resource: User.new))}");
+console.log("111111");
 - @error.each do |error|
-  $('#errors').append('<br>'+"#{error}")
+    $('#errors').append('<br>'+"#{error}")
+console.log("22222");
+$("#user_email").val('#{@par[0]}');
+console.log("33333");

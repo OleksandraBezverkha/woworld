@@ -1,10 +1,10 @@
 $(document).ready ->
     # disable auto discover
-    Dropzone.autoDiscover = true
-    # grap our upload form by its id
-    $('#new_upload').dropzone
-    paramName: 'upload[image]'
-    addRemoveLinks: true
+#    Dropzone.autoDiscover = true
+#    # grap our upload form by its id
+#    $('#new_upload').dropzone
+#    paramName: 'upload[image]'
+#    addRemoveLinks: true
 #//Dropzone.autoDiscover = false;
 #
 #//
@@ -39,24 +39,42 @@ $(document).ready ->
 #    //    $($("#show_imgs li")).css({"mapgin": "50px","background-color": "yellow"});
 #    //};
 #//}
+    if $('#media-dropzone')
+        mediaDropzone = undefined
+        mediaDropzone = new Dropzone('#media-dropzone')
+        mediaDropzone.on 'success', (file, responseText) ->
+            console.log responseText
+            appendContent responseText.image.url, responseText.id
+            _this = this
+            setTimeout (->
+                _this.removeAllFiles()
+                return
+            ), 5000
+            return
+
+    appendContent = (imageUrl, mediaId) ->
+        if $('#show_imgs').length > 0
+            code = '<img src="' + imageUrl + '" />'
+        $('#show_imgs').append code
+
+
+##Dropzone.autoDiscover = false
+#$(document).ready ->
+#    if $('#media-dropzone').length > 0
+#        console.log("ololo")
+#        mediaDropzone = undefined
+#        mediaDropzone = new Dropzone('#media-dropzone')
+#        mediaDropzone.on 'success', (file, responseText) ->
+#            appendContent responseText.image.url, responseText.id
+#            _this = this
+#            setTimeout (->
+#                _this.removeAllFiles()
+#                return
+#            ), 5000
+#            return
+#
+#    appendContent = (imageUrl, mediaId) ->
+#        $('#media-contents').prepend '<div class="thumbnail" style="border: 1px solid red;" onClick="showImage(\'' + imageUrl + '\')">' + '<img src="' + imageUrl + '"/></div>'
 #    @showImage = (url) ->
 #        code = '<img src="' + url + '" />'
-#        $('.dropzone').html code
-#
-#    Dropzone.autoDiscover = false
-#    $(document).ready ->
-#        if $('.dropzone').length > 0
-#            $ ->
-#                mediaDropzone = undefined
-#                mediaDropzone = new Dropzone('.dropzone')
-#                mediaDropzone.on 'success', (image, responseText) ->
-#                    appendContent responseText.image.url, responseText.id
-#                    _this = this
-#                    setTimeout (->
-#                        _this.removeAllFiles()
-#                        return
-#                    ), 5000
-#                    return
-#
-#            appendContent = (imageUrl, mediaId) ->
-#                $('#media-contents').prepend '<div class="thumbnail" style="border: 1px solid red;" onClick="showImage(\'' + imageUrl + '\')">' + '<img src="' + imageUrl + '"/></div>'
+#        $('#media-dropzone').html code

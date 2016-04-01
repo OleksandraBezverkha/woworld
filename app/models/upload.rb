@@ -7,4 +7,5 @@ class Upload < ActiveRecord::Base
   #                       :content_type => { :content_type => /\Aimage\/.*\Z/ },
   #                       :size => { :less_than => 1.megabyte }
   mount_uploader :image, ImageUploader
+  belongs_to :user
 end

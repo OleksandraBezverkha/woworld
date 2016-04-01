@@ -12,6 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     respond_to do |format|
       resource.save
       @error = resource.errors.full_messages
+      @par=[sign_up_params[:email]]
       yield resource if block_given?
       if resource.persisted?
         if resource.active_for_authentication?
@@ -36,9 +37,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # PUT /resource
   def update
-    super
+    if current_user.valid?
+      current_user.update(account_update_params)
+    end
+    return @error = 'Email is invalid' unless current_user.valid?
   end
-
+  def account_update_params
+    params.require(:user).permit(:email, :name)
+  end
   # DELETE /resource
   def destroy
     super
@@ -49,6 +55,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   protected
 
+  def update_resource(resource, params)
+    resource.update_without_password(params)
+  end
   def sign_up(resource_name, resource)
     sign_in(resource_name, resource)
   end

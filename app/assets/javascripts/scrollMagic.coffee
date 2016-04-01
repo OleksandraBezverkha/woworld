@@ -1,18 +1,5 @@
 $ ->
   scrollMagicController = new ScrollMagic
-  #var tween1 = TweenMax.to('#animation-1', 0.3, {
-  #    backgroundColor: 'rgb(255, 253, 61)',
-  #    scale: 10,
-  #    rotation: 180
-  #});
-  #var scene1 = new ScrollScene({
-  #    triggerElement: '#scene-1',
-  #    offset: 50
-  #})
-  #    .setClassToggle('main', 'scene-1-active')
-  #    .setTween(tween1)
-  #    .addTo(scrollMagicController);
-  # Create Animation for 0.5s
   tween2 = TweenMax.to('#animation-2', 0.3,
     backgroundColor: 'rgb(224, 82, 252)'
     scale: 10
@@ -39,10 +26,10 @@ $ ->
     rotation: 180)
   scene5 = new ScrollScene(
     triggerElement: '#scene-5'
-    offset: 50).setClassToggle('main', 'scene-5-active').setTween(tween5).addTo(scrollMagicController)
+    offset: 50).setClassToggle('main', 'scene-5-active').setTween(tween5).addTo(scrollMagicController);
   # Add debug indicators fixed on right side
-  #scene1.addIndicators();
-  scene2.addIndicators()
+#  scene1.addIndicators();
+  scene2.addIndicators();
   scene3.addIndicators()
   scene4.addIndicators()
   scene5.addIndicators()

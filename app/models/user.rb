@@ -2,16 +2,18 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   # has_many :uploads, dependent: :destroy
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: [:create , :update] }
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable,:validatable, :omniauthable#, :omniauth_providers => [:facebook]
   has_many :identities, :dependent => :destroy
-  def update_with_password(params={})
-    if params[:password].blank?
-      params.delete(:password)
-      params.delete(:password_confirmation) if params[:password_confirmation].blank?
-    end
-    update_attributes(params)
-  end
+  has_many :uploads, :dependent => :destroy
+  # def update_with_password(params={})
+  #   if params[:password].blank?
+  #     params.delete(:password)
+  #     params.delete(:password_confirmation) if params[:password_confirmation].blank?
+  #   end
+  #   update_attributes(params)
+  # end
   # validates_presence_of   :email
   # validates_uniqueness_of :email, allow_blank: true, if: :email_changed?
   # validates_format_of     :email, with: Devise.email_regexp, allow_blank: true, if: :email_changed?

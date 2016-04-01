@@ -4,6 +4,9 @@
 -#      -@uploads.each do |upload|
 -#        %li.gridster-cell{"data-col" => "1", "data-row" => "1", "data-sizex" => "1", "data-sizey" => "1"}
 -#          =image_tag upload.image_url(:thumb)
--if @uploads
-  -@uploads.each do |upload|
-    =image_tag upload.image_url(:thumb),class:"jqPuzzle"
+#show_imgs
+  -if @uploads
+    -@uploads.each do |upload|
+      =image_tag upload.image_url(:thumb)#,class:"jqPuzzle"
+      %br
+        =upload.user.email

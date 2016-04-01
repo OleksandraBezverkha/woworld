@@ -1,2 +1,5 @@
-$("#dev").html("#{escape_javascript(render('pages/sign_in_up'))}");
+$("#dev").html("#{escape_javascript(render('pages/for_sign_in'))}");
+console.log('11111')
+$('#errors').html('<br>'+'#{@error}' );
+$("#user_email").val('#{@par[0]}');
 

@@ -8,13 +8,14 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def create
+
     # build_resource
+    @par = [params[:user][:email]]
     resource = User.find_for_database_authentication(:email => params[:email])
-    return @error = 'Invalid email or password' unless resource
+    return @error = t(:Invalid_email_or_password) unless resource
 
     if resource.valid_password?(params[:password])
       resource.ensure_authentication_token!
-      puts "#{resource.errors.full_messages}"
       respond_to do |format|
         format.js
       end

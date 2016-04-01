@@ -1,0 +1,5 @@
+$("#dev").html("#{escape_javascript(render('pages/edit'))}");
+console.log('22222');
+-#- @error.each do |error|
+-#  $('#errors').append('<br>'+"#{error}")
+$('#err').html('#{@error}' );

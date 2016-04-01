@@ -1,0 +1,5 @@
+#dev
+  -if user_signed_in?
+    =render "pages/info", resource: resource
+  -else
+    =render "pages/sign_in", resource: resource

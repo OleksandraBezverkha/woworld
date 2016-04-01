@@ -1,10 +1,11 @@
 $(document).ready ->
   mySettings =
     cols: 3
-    hole: 3
+    rows: 3
+#    hole:
     numbers: false
-    control:
-      toggleNumbers: false
+#    control:
+#      toggleNumbers: false
 #      counter: false
 #      timer: false
     animation:
