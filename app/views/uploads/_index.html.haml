@@ -7,6 +7,7 @@
 #show_imgs
   -if @uploads
     -@uploads.each do |upload|
-      =image_tag upload.image_url(:thumb)#,class:"jqPuzzle"
+      =image_tag upload.image_url(:thumb),class:"jqPuzzle"
+      =upload.user.email
       %br
-        =upload.user.email
+        %br

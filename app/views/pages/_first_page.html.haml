@@ -1,4 +1,5 @@
 .row
+  #first
   .col-xs-8
     = link_to 'WoWorld', root_path, class: 'navbar-brand',remote:true
     %br
@@ -20,5 +21,5 @@
           %li
             =link_to "English", locale: :en
           %li
-            = link_to 'Русский', :locale=>'ru'
+            = link_to 'Русский', locale: :ru
       =render "pages/for_sign_in", resource: resource

@@ -1,4 +1,5 @@
-=link_to "#{t(:logout)}", destroy_user_session_path, method: :delete,class:"btn btn-danger menu",remote:true
+.logout
+  =link_to "#{t(:logout)}", destroy_user_session_path, method: :delete,class:"btn btn-info menu",remote:true
 %br
   %br
 .tab2
@@ -28,9 +29,9 @@
         -#= devise_error_messages!
         %div
           %br/
-          = f.text_field :name,value: "#{current_user.name}",placeholder:"#{t(:email)}"
+          = f.text_field :name,placeholder:"#{t(:email)}"#,value: "#{current_user.name}"
           %br/
-          = f.email_field :email,value: "#{current_user.email}",placeholder:"#{t(:email)}"
+          = f.email_field :email,placeholder:"#{t(:email)}"#,value: "#{current_user.email}"
         %p
           (#{t(:leave_blank_if_you_don_t_want_to_change_it, :default => "leave blank if you don't want to change it")})
           = f.password_field :password, :autocomplete => "off",placeholder:"#{t(:password)}"
@@ -42,7 +43,7 @@
         -#    (#{t('.we_need_your_current_password_to_confirm_your_changes', :default => 'we need your current password to confirm your changes')})
         -#  = f.password_field :current_password,placeholder: "Current Password"
         %div
-          = f.submit t(:update),class:"btn btn-success btn-sm"
+          = f.submit t(:update),class:"btn btn-info btn-sm"
       %p
         -#? #{link_to t('.cancel_my_account', :default => "Cancel my account"), registration_path(resource_name), :data => { :confirm => t('.are_you_sure', :default => "Are you sure?") }, :method => :delete}.
         = button_to t(:cancel_my_account), registration_path(resource_name), data: { confirm: t(:are_you_sure) }, method: :delete,class:"btn btn-default"

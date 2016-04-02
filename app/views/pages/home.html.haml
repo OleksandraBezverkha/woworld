@@ -37,15 +37,25 @@
         .cloud
     #animation-3.animation
     #scene-3.wrap
-      %h2 DROPZONE  drag img
-      .dz
+      %h2 DROPZONE  puzzle
       -if user_signed_in?
         = render 'uploads/new'
         = render 'uploads/index'
+      -else
+        %h4
+          to upload your imgs please
+          %a.btn.btn-danger{ :href => "#first"}sign in
+          %br
+            %br
+          = image_tag("22.jpg", size: "400x300", alt: "Avatar",class:"jqPuzzle")
+          %br
+            %br
+
+
         -#= render 'uploads/puzzle_modal'
       -#%img.jqPuzzle{:alt => "Animals crossing", :src => "/assets/11.jpg"}
     #animation-5.animation
     #scene-5.wrap
-      %h2 YouTube
-      %iframe{:allowfullscreen => "", :frameborder => "0", :height => "720", :src => "https://www.youtube.com/embed/oh_1c4NFnk4", :width => "1280"}
+      -#%h2 YouTube
+      -#%iframe{:allowfullscreen => "", :frameborder => "0", :height => "720", :src => "https://www.youtube.com/embed/oh_1c4NFnk4", :width => "1280"}
     = tinymce

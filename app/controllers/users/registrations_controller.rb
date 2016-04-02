@@ -29,7 +29,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
       end
     end
   end
-
+  def sign_up_params
+    params.require(:user).permit(:email, :password, :password_confirmation, :avatar)
+  end
   # GET /resource/edit
   def edit
     super
@@ -43,7 +45,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     return @error = 'Email is invalid' unless current_user.valid?
   end
   def account_update_params
-    params.require(:user).permit(:email, :name)
+    params.require(:user).permit(:email, :name,:avatar)
   end
   # DELETE /resource
   def destroy

@@ -27,9 +27,7 @@ $ ->
   scene5 = new ScrollScene(
     triggerElement: '#scene-5'
     offset: 50).setClassToggle('main', 'scene-5-active').setTween(tween5).addTo(scrollMagicController);
-  # Add debug indicators fixed on right side
-#  scene1.addIndicators();
-  scene2.addIndicators();
+  scene2.addIndicators()
   scene3.addIndicators()
   scene4.addIndicators()
   scene5.addIndicators()
