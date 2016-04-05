@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'shmatgem'
+
 gem 'haml'
 gem 'haml-rails'
 gem 'bootstrap-sass'

@@ -20,7 +20,8 @@ $(document).ready ->
     txt=tinyMCE.activeEditor.getContent();
     txt=txt.replace(/^\<p\>/,"").replace(/\<\/p\>$/,"");
 #    $('p').remove()
-    tinyMCE.activeEditor.setContent(txt+':' + a + ':');
+    tinyMCE.activeEditor.setContent(txt+ '<div class="'+a+'"> </div>' );
+#    tinyMCE.activeEditor.setContent(txt+ '<img src="/assets/emoji2.png" class="'+a+'" />' );
 
 #    $('#emoji_textarea').val(txt + ':' + a + ':')
 #  $('.danger').popover

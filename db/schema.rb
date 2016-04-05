@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20160401155009) do
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
 
   create_table "messages", force: :cascade do |t|
+    t.integer  "user_id"
     t.string   "msg"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -10,7 +10,7 @@ $(document).ready ->
 #      timer: false
     animation:
       shuffleRounds: 1
-      slidingSpeed: 100
+      slidingSpeed: 400
       shuffleSpeed: 200
   # call jqPuzzle with mySettings on an image with id 'myImage'
   $('.jqPuzzle').jqPuzzle mySettings

@@ -1,3 +1,5 @@
 - messages.reverse.each do |msg|
   .msg
-    = emojify(msg.msg.html_safe)
+    = msg.msg.html_safe
+    %strong
+      = msg.user.email

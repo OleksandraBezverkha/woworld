@@ -8,9 +8,12 @@
     #animation-2.animation
     #scene-2.wrap
       %h2 Tinymce
-      =form_for(Message.new ,remote: true ) do |f|
-        = f.text_area :msg, :class => "tinymce",id:"tiny_area" ,:rows => 10, :cols => 12
-        = f.submit "Send",id:"send"
+      -if user_signed_in?
+        = render 'messages/new'
+      -else
+        %h4
+          to add your msgs please
+          %a.btn.btn-danger{ :href => "#first"}sign in
       #msg
         = render('messages/message', :messages => @messages)
       -#= text_area_tag :content, "", :class => "tinymce",id:"tiny_area", :rows => 10, :cols => 12,placeholder: "type msg"
@@ -40,7 +43,9 @@
       %h2 DROPZONE  puzzle
       -if user_signed_in?
         = render 'uploads/new'
-        = render 'uploads/index'
+        .show_puzzle
+        #show_imgs
+          = render 'uploads/index'
       -else
         %h4
           to upload your imgs please
@@ -59,3 +64,6 @@
       -#%h2 YouTube
       -#%iframe{:allowfullscreen => "", :frameborder => "0", :height => "720", :src => "https://www.youtube.com/embed/oh_1c4NFnk4", :width => "1280"}
     = tinymce
+  .footer
+    %h1
+      Footer with my contacts

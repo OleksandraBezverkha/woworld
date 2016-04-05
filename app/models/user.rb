@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable,:validatable, :omniauthable#, :omniauth_providers => [:facebook]
   has_many :identities, :dependent => :destroy
   has_many :uploads, :dependent => :destroy
+  has_many :messages, :dependent => :destroy
   # def update_with_password(params={})
   #   if params[:password].blank?
   #     params.delete(:password)

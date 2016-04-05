@@ -1,22 +1,20 @@
 class UploadsController < ApplicationController
+  skip_before_filter :verify_authenticity_token
   def new
     @upload = Upload.new
 
   end
+  def index
+    @uploads = Upload.all
 
+  end
   def create
-    @upload = current_user.uploads.create(image: params[:file])
+    @upload = current_user.uploads.new(image: params[:file])
     if @upload.save!
-      p "popa"
       respond_to do |format|
         format.json{ render :json => @upload }
-        p "ololo"
-
-    # else
-    #   #  you need to send an error header, otherwise Dropzone
-    #   #  will not interpret the response as an error:
-    #   render json: { error: @upload.errors.full_messages.join(',')}, :status => 400
-    end
+        # render json: @upload.to_json
+      end
   end
 end
   # private

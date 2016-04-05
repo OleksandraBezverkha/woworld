@@ -1,0 +1,3 @@
+=form_for(Message.new ,remote: true ) do |f|
+  = f.text_area :msg, :class => "tinymce",id:"tiny_area" ,:rows => 10, :cols => 12
+  = f.submit "Send",id:"send"
